@@ -1,0 +1,112 @@
+doctype html
+html(lang="en" ng-app="llenarMatriz")
+	head
+		title Login
+		meta(charset="utf-8")
+		link(href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet")
+		link(href="css/main.css" rel="stylesheet")
+		link(href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css')
+		link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css')
+		link(href='css/animate.css' rel='stylesheet' type='text/css')
+		link(rel="stylesheet" href="angular-nvd3/node_modules/nvd3/build/nv.d3.min.css")
+		script(src="http://code.jquery.com/jquery-3.1.0.min.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js")
+		script(src="angular-nvd3/node_modules/d3/d3.js")
+		script(src="angular-nvd3/node_modules/nvd3/build/nv.d3.js")
+		script(src="angular-nvd3/dist/angular-nvd3.js")
+		script(src="controllers/controller.js")
+		
+		
+	body(ng-controller="matriz")
+		center
+			nav(class="large-padding fondo-gris")
+				ul(class="no-list mediano")
+					li(class="  col-lg-2   inline-block")
+						a(href="/loginExp" class="green arvo") Topsis #[small(class="lato small") Best Choice]
+					li(class="col-lg-2 inline-block")
+						a(href="/loginAdmin" class="green arvo") Administrador
+					li(class="col-lg-2  inline-block ")
+						a(href="/informacion" class="green arvo") Guía Usuario
+					li(class="col-lg-2  inline-block ")
+						a(href="/acercaDe" class="green arvo") Acerca de
+block contenido		
+	label(ng-hide = "hideView" class="animated fadeInLeft") Ingrese Criterio y Peso
+	form(class="form-inline" class="animated fadeInLeft" role="form" ng-hide = "hideView")
+		input(type="text" ng-model="nuevoCriterio.criterio" placeholder="Criterio" class="form-control")
+		input(type="number" ng-model="nuevoCriterio.peso" placeholder="Peso" class="form-control")
+		input(type="button" class="btn btn-default btn-md" ng-click="addData()" value="Agregar Criterio")
+
+	table(class="table" ng-hide = "hideView")
+		thead
+			tr
+				th Criterio
+				th Peso
+				th
+
+		tbody
+			tr(ng-repeat="data in criterios")
+				td {{data.criterio}}
+				td {{data.peso}}
+				td
+					a(href="" ng-click="removeData(data)") Eliminar
+
+	input(type="button" class="btn btn-primary btn-block" ng-click="continuar()" value="Continuar" ng-hide = "hideView")
+	label(ng-show="showAlt" class="animated fadeInLeft") Ingrese Alternativa
+	table(ng-show="showAlt" class="animated fadeInLeft")
+		//-thead
+			tr(class="center")
+				th
+				th(ng-repeat="data in criterios" ) {{data.criterio}}-//
+
+		tbody
+			tr
+				td
+					input(type="text"  ng-model="nuevaAlternativa[0]" placeholder="Alternativa" class="form-control")
+				td(ng-repeat="data in criterios track by $index")
+					input(type="number"  ng-model="nuevaAlternativa[$index + 1]" placeholder="{{criterios[$index].criterio}}" class="form-control")
+				td
+					input(type="button" class="btn btn-default btn-md" ng-click="addData2()" value="Agregar Alternativa")
+
+	
+	table( class="table" ng-show="showAlt" )
+		thead
+			tr(class="center")
+				th Alternativa
+				th(ng-repeat="data in criterios" ) {{data.criterio}}	
+				th
+		tbody
+			tr(ng-repeat="data1 in alternativas")
+				td(ng-repeat="data2 in data1 track by $index") {{data1[$index]}}
+				td
+					a(href="" ng-click="removeData2(data2)") Eliminar
+
+	input(type="button" class="btn btn-primary btn-block" ng-click="calcular()" value="Calcular" ng-show="showAlt")
+
+	div(class="container-fluid" )
+		section(class="main row")
+			div(class= "col-md-6 inline-block center")
+				nvd3(options='options' data='ResultadosGrafico')
+
+			aside(class="col-md-6 inline-block " ng-show="showResults")
+
+				h1(class= "animated fadeInLeft") Resultados
+				div(ng-repeat="data in Resultados")
+					h6( class= "animated fadeInLeft") {{data.indice}}: {{data.valor}}
+				br
+				br
+				table(class="table" class="animated fadeInLeft delay-05")
+					thead
+						tr
+							th Dist. Euclidea +
+							th Dist. Euclidea -
+							
+
+					tbody
+						tr(ng-repeat="data in vistaDistanciasEuclideas")
+							td {{data.pos}}
+							td {{data.neg}}
+
+
+
+								
+

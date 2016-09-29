@@ -1,0 +1,13 @@
+extends ../layout.jade
+block contenido
+	div(class="col-md-5 center-block no-float top-space text-left")
+		h1 Ingreso de Parámetros
+		form(method="POST" action="/ingresoDimencionesMatriz" style="margin-top:1.5em;" enctype="multipart/form-data")
+			div(class="form-group")
+				label Número de Criterios
+				input(type="number" step="any" name="criterios" placeholder="Cantidad de criterios" class="form-control")
+			div(class="form-group")
+				label Número de Alternativas
+				input(type="number" step="any" name="alternativas" placeholder="Cantidad de Alternativas" class="form-control")
+			div(class="form-group text-right")
+				input(type="submit" class="btn btn-info" value="Generar")

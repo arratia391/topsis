@@ -1,0 +1,26 @@
+extends ./layout.jade
+block contenido
+	body(class="bgd")
+		div(class="col-md-5 center-block no-float top-space text-left divAgregarExperto arvo divbox")
+			h3 Agregar Experto
+			form(method="POST" action="/agregarPost" style="margin-top:1.5em;" enctype="multipart/form-data")
+				div(class="form-group")
+					label Nombre Completo
+					input(type="text" name="nombreCompleto" placeholder="Nombre del Experto" class="form-control")
+				div(class="form-group")
+					label Usuario
+					input(type="text" title="Se debe completar este campo" name="nuevoUsuario" placeholder="Nombre de Usuario" class="form-control" requiered )
+				div(class="form-group")
+					label Fecha de Nacimiento
+					input(type="date" name="fechaDeNacimiento" placeholder="Fecha de nacimiento" class="form-control")
+				div(class="form-group")
+					label Ocupación
+					input(type="text" name="ocupacion" placeholder="Ocupación del Experto" class="form-control")
+				div(class="form-group")
+					label Correo Electrónico
+					input(type="email" name="correoElectronico" placeholder="Correo electrónico del Experto" class="form-control")
+				div(class="form-group")
+					label Contraseña
+					input(type="password" title="Se debe completar este campo" name="nuevaContraseña"  placeholder="Contraseña" class="form-control" requiered)
+				div(class="form-group text-right")
+					input(type="submit" class="btn btn-info" value="Guardar")

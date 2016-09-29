@@ -1,0 +1,14 @@
+extends ./layout.jade
+block contenido
+	body(class="bgd")
+		div(class="col-md-5 center-block no-float top-space text-left div1 arvo divbox")
+			h3 Login Administradores
+			form(method="POST" action="/admin" style="margin-top:1.5em;" enctype="multipart/form-data")
+				div(class="form-group")
+					label Usuario
+					input(type="text" name="user" placeholder="Nombre de Usuario" class="form-control")
+				div(class="form-group")
+					label Contraceña
+					input(type="password" name="password" placeholder="Contraceña" class="form-control")
+				div(class="form-group text-right")
+					input(type="submit" class="btn btn-info" value="Ingresar")

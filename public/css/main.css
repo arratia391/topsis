@@ -1,0 +1,195 @@
+html,body{
+	height: 100%;
+	font-family: 'Lato', sans-serif;
+	
+}
+.full-height{
+	height: 100%;
+}
+.lato{
+	font-family: 'Lato', sans-serif;	
+}
+.pacifico{
+	font-family: 'Pacifico', cursive;
+}
+
+.arvo
+{
+	font-family: 'Arvo', serif;
+}
+.big{
+	font-size: 4em;
+}
+.small{
+	font-size: 12px;
+}
+img{
+	max-width: 100%;
+}
+.no-float{
+	float: none;
+}
+.top-space{
+	margin-top: 100px;
+}
+.tope{
+	vertical-align: top;
+}
+.green{
+	color: #00887C;
+}
+.right-space{
+	margin-right: 1em;
+}
+.large-padding{ /*ensancha la barra*/
+	padding: 5px 10px;
+}
+.fondo-gris{
+	background-color: #eee;
+}
+.inline-block{
+	float: none;
+	display: inline-block;
+	margin-right: -4px;
+}
+.mediano{
+	font-size: 1.3em;
+}
+.menu img{
+	margin: 20px 0px;
+}
+a,.blue{
+	color: #009FFF;
+}
+.delay-1{
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.delay-2{
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	animation-delay: 2s;
+}
+.no-list{
+	margin: 0px;
+	padding: 0px;
+}
+.no-list li{
+	list-style-type: none;
+}
+.imgsmall
+{
+	height: 350px;
+}
+.bgd {
+	background-image: url(/imgs/bg.jpg);
+}
+
+.div1
+{
+	width: 600px;
+	height: 235px;
+	background-color: #eee;
+}
+
+.divAgregarExperto
+{
+	width: 600px;
+	height: 535px;
+	background-color: #eee;
+}
+
+.divInformacion
+{
+	width: 600px;
+	height: 1450px;
+	background-color: #eee;
+}
+.margin-bootom-sm {
+    margin-bottom: 40px;
+}
+.delay-05{
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 0,5s;
+}
+.imgsmall
+{
+	height: 17em;
+	width:17em;
+} 
+.divbox
+{
+background-color: #bababa;
+border: 5px solid #b3b5b5;
+-moz-border-radius: 13px;
+-webkit-border-radius: 13px;
+border-radius: 13px;
+/*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+-moz-box-shadow: 0px 0px 20px #000000;
+-webkit-box-shadow: 0px 0px 20px #000000;
+box-shadow: 0px 0px 20px #000000;
+/*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#d1d1d1', endColorstr = '#b9b9bd');
+/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+/*Element must have a height (not auto)*/
+/*All filters must be placed together*/
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#d1d1d1', endColorstr = '#b9b9bd')";
+/*Element must have a height (not auto)*/
+/*All filters must be placed together*/
+background-image: -moz-linear-gradient(top, #d1d1d1, #b9b9bd);
+background-image: -ms-linear-gradient(top, #d1d1d1, #b9b9bd);
+background-image: -o-linear-gradient(top, #d1d1d1, #b9b9bd);
+background-image: -webkit-gradient(linear, center top, center bottom, from(#d1d1d1), to(#b9b9bd));
+background-image: -webkit-linear-gradient(top, #d1d1d1, #b9b9bd);
+background-image: linear-gradient(top, #d1d1d1, #b9b9bd);
+-moz-background-clip: padding;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+/*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+/*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+opacity: 0.91;
+-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 91);
+/*-ms-filter must come before filter*/
+filter: alpha(opacity = 91);
+/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+/*All filters must be placed together*/
+}
+
+.botonalt{
+	-moz-box-shadow:inset 0px 0px 6px 0px #dbdbdb;
+	-webkit-box-shadow:inset 0px 0px 6px 0px #dbdbdb;
+	box-shadow:inset 0px 0px 6px 0px #dbdbdb;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #b8b8b8), color-stop(1, #ffffff) );
+	background:-moz-linear-gradient( center top, #b8b8b8 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8b8b8', endColorstr='#ffffff');
+	background-color:#b8b8b8;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #dbdbdb;
+	display:inline-block;
+	color:#777777;
+	font-family:Georgia;
+	font-size:15px;
+	font-weight:normal;
+	font-style:normal;
+	height:32px;
+	line-height:32px;
+	width:158px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ededed;
+}
+
