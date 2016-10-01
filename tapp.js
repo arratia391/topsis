@@ -111,6 +111,13 @@ app.post("/agregarPost", function(solicitud, respuesta){
 	respuesta.render("admin");
 });
 
+app.get("/editarEliminar", function(solicitud,respuesta){
+	Expert.find(function(error,documento){
+		if(error){console.log(error);}
+		respuesta.render("editarEliminar", {expertos: documento});
+	});
+});
+
 
 app.post("/ingresoDimencionesMatriz", function(solicitud, respuesta){
 	var criterios = solicitud.body.criterios;

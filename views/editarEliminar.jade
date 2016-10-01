@@ -1,0 +1,24 @@
+extends ./layout.jade
+block contenido
+	body(class="bgd")
+		div(class="col-md-5 center-block no-float top-space text-left diveditarEliminar arvo divbox")
+			h3 Editar/Eliminar Experto
+			table( class="table")
+				thead
+					tr(class="center")
+						th #
+						th Nombre
+						th Usuario
+						th Fecha Nacimiento
+						th Email
+						th contraseña
+				tbody
+					each experto in expertos
+						tr
+							td= experto.id
+							td= experto.nombreCompleto
+							td= experto.usuario
+							td= experto.fechaNacimiento
+							td= experto.email
+							td= experto.contraseña
+						
