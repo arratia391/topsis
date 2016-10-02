@@ -118,6 +118,13 @@ app.get("/editarEliminar", function(solicitud,respuesta){
 	});
 });
 
+app.get("/menu/edit/:id", function(solicitud, respuesta){
+	var id_experto = solicitud.params.id;
+	Expert.findOne({"_id": id_experto}, function(error, experto){ 
+	console.log(experto);
+	respuesta.render("editar", {datos: experto});
+	});
+});
 
 app.post("/ingresoDimencionesMatriz", function(solicitud, respuesta){
 	var criterios = solicitud.body.criterios;

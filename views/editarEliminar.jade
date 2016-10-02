@@ -3,6 +3,7 @@ block contenido
 	body(class="bgd")
 		div(class="col-md-5 center-block no-float top-space text-left diveditarEliminar arvo divbox")
 			h3 Editar/Eliminar Experto
+			br
 			table( class="table")
 				thead
 					tr(class="center")
@@ -21,4 +22,8 @@ block contenido
 							td= experto.fechaNacimiento
 							td= experto.email
 							td= experto.contraseña
+							td 
+								a(href="/menu/edit/#{experto.id}") Editar
+								="-"
+								a(href="#") Eliminar
 						
