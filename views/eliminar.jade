@@ -1,0 +1,8 @@
+extends ./layout.jade
+block contenido
+	body(class="bgd")
+		div(class="col-md-5 center-block no-float top-space text-left diveliminar arvo divbox")
+			h3 Eliminar Experto #[span= datos.usuario]
+			form(method="POST" action="/menu/#{datos.id}?_method=delete" style="margin-top:1.5em;")
+				div(class="form-group text-right")
+					input(type="submit" class="btn btn-info" value="Eliminar")

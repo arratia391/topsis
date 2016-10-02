@@ -142,10 +142,31 @@ app.put("/menu/:id", function(solicitud, respuesta){
 	});
 });
 
+app.get("/menu/delete/:id", function(solicitud, respuesta){
+	var id = solicitud.params.id;
+
+	Expert.findOne({"_id": id}, function(err, experto){
+		console.log(experto);
+		respuesta.render("eliminar", {datos: experto})
+	});
+
+});
+
+
+
 app.post("/ingresoDimencionesMatriz", function(solicitud, respuesta){
 	var criterios = solicitud.body.criterios;
 	var alternativas = solicitud.body.alternativas;
 	respuesta.render("engine/ingresoDatosMatriz", {datos: solicitud});
+});
+
+app.delete("/menu/:id", function(solicitud,respuesta){
+	var id = solicitud.params.id;
+	Expert.remove({"_id": id}, function(err){
+	if(err){ console.log(err); }
+	respuesta.redirect("/editarEliminar");
+	});
+	
 });
 
 
