@@ -67,13 +67,36 @@ app.get("/informacion", function(solicitud, respuesta){
 //*************  PESTAÑA LOGIN EXPERTOS  ********************
 app.post("/admin", function(solicitud, respuesta){
 	console.log(solicitud.body);
+	var nomUsuario = solicitud.body.userExp;
+	var passUsuario = solicitud.body.passwordExp;
+	Expert.findOne({"usuario": nomUsuario}, function(error, experto){ 
+		console.log(experto);
+		console.log(error);
+		if(error){
+			console.log('some kind of error happened : ' + err );
+		}
+		if(!experto)
+		{
+			respuesta.render("admin");
+		}
+		else if(experto.contraseña == passUsuario){
+			respuesta.render("engine/ingresoDatosMatriz");
+		}
+		else{
+			respuesta.render("admin");
+		}
+
+
+	});
+
+/*
 	if(solicitud.body.userExp == 'rodrigo' && solicitud.body.passwordExp == app_password){
 		respuesta.render("engine/ingresoDatosMatriz");
 	}
 	else{
-		respuesta.redirect("/");
+		respuesta.redirect("admin");
 	}
-
+*/
 });
 
 //*************  PESTAÑA LOGIN ADMINISTRADOR  ********************
