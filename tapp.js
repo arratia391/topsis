@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var bodyparser = require('body-parser'); // para poder leer el body de un post
 var multer = require('multer');
 var cloudinary = require('cloudinary');
+var method_override = require("method-override");
 var app_password = "123";
 var app = express();
 
@@ -17,6 +18,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(express.static("public")); 
 app.use(multer([{dest: "./uploads"}]));
+app.use(method_override("_method"));
 
 app.set("view engine","jade"); /* para poder utilizar jade */
 
@@ -123,6 +125,20 @@ app.get("/menu/edit/:id", function(solicitud, respuesta){
 	Expert.findOne({"_id": id_experto}, function(error, experto){ 
 	console.log(experto);
 	respuesta.render("editar", {datos: experto});
+	});
+});
+
+app.put("/menu/:id", function(solicitud, respuesta){
+	var data = {
+		nombreCompleto: solicitud.body.nombreCompleto,
+		usuario: solicitud.body.nuevoUsuario,
+		fechaNacimiento: solicitud.body.fechaDeNacimiento,
+		ocupacion: solicitud.body.ocupacion,
+		email: solicitud.body.correoElectronico,
+		contraseña: solicitud.body.nuevaContraseña
+	}
+	Expert.update({"_id": solicitud.params.id},data, function(experto){
+		respuesta.redirect("/editarEliminar");
 	});
 });
 
