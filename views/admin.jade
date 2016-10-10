@@ -1,6 +1,9 @@
 extends ./layout.jade
 block contenido
 	body(class="bgd")
+		
+		div(class="col-md-5 center-block no-float top-space text-left divUtem arvo divbox ")
+			h3(text-align: center) Plataforma de Apoyo a la Toma de Decisiones - Metodología TOPSIS
 		div(class="col-md-5 center-block no-float top-space text-left div1 arvo divbox")
 			h3 Login Expertos
 			form(method="POST" action="/admin" style="margin-top:1.5em;" enctype="multipart/form-data")
@@ -12,3 +15,5 @@ block contenido
 					input(type="password" name="passwordExp" placeholder="Contraseña Experto" class="form-control")
 				div(class="form-group text-right")
 					input(type="submit" class="btn btn-info" value="Ingresar")
+		
+		img(src="/imgs/logoutem3.jpg" class="imgcenter margin-top-sm")
