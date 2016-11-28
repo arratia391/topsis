@@ -146,18 +146,19 @@ angular.module("llenarMatriz",['nvd3'])
 
 		//**********************************************************************************
 		//MATRIZ NORMALIZADA PONDERADA
-		MatrizEtapaII = [];
+		$scope.MatrizEtapaII = [];
 		for(i=0; i<copiaMatriz.length; i++){
-			var FilaEtapaII = [];
+			$scope.FilaEtapaII = [];
 			for(j=0; j<copiaMatriz[0].length; j++){
-				FilaEtapaII.push((copiaMatriz[i][j]/ArraySum[j])*(pesosNormalizados[j]));
+				$scope.FilaEtapaII.push((copiaMatriz[i][j]/ArraySum[j])*(pesosNormalizados[j]));
 
 			}
-			MatrizEtapaII.push(FilaEtapaII);
+			$scope.MatrizEtapaII.push($scope.FilaEtapaII);
 		}
 		//console.log(copiaMatriz);
 		console.log("NORMALIZADA PONDERADA:");
-		console.log(MatrizEtapaII);
+		console.log($scope.MatrizEtapaII);
+		console.log($scope.alternativas);
 
 		//**********************************************************************************
 		//SIP SIN - ETAPA III
@@ -168,7 +169,7 @@ angular.module("llenarMatriz",['nvd3'])
 			may = 0;
 			men = 99999999;
 			for(j=0; j<rows; j++){
-				var dato = MatrizEtapaII[j][i];
+				var dato = $scope.MatrizEtapaII[j][i];
 				if(dato > may){
 					may = dato;
 				}
@@ -187,24 +188,24 @@ angular.module("llenarMatriz",['nvd3'])
 		//   MAATRIZ DISTANCIA EUCLIDEA - ETAPA IV
 
 		 ArrayDistanciaEuclideaPos = [];
-		 var rowsEtapaII = MatrizEtapaII.length;
-		 var colsEtapaII = MatrizEtapaII[0].length;
+		 var rowsEtapaII = $scope.MatrizEtapaII.length;
+		 var colsEtapaII = $scope.MatrizEtapaII[0].length;
 		 for(i=0; i<rowsEtapaII; i++){
 		 	var modulo = 0.0;
 		 	for(j = 0; j<colsEtapaII; j++){
-		 		modulo = modulo + Math.pow(MatrizEtapaII[i][j]-parseFloat(ArraySipSin[j].sip),2);	
+		 		modulo = modulo + Math.pow($scope.MatrizEtapaII[i][j]-parseFloat(ArraySipSin[j].sip),2);	
 		 	}
 		 	ArrayDistanciaEuclideaPos.push(Math.pow(modulo,0.5));
 		 }
 		 console.log("Distancia Euclidea +: "+ArrayDistanciaEuclideaPos);
 
 		 ArrayDistanciaEuclideaNeg = [];
-		 var rowsEtapaII = MatrizEtapaII.length;
-		 var colsEtapaII = MatrizEtapaII[0].length;
+		 var rowsEtapaII = $scope.MatrizEtapaII.length;
+		 var colsEtapaII = $scope.MatrizEtapaII[0].length;
 		 for(i=0; i<rowsEtapaII; i++){
 		 	var modulo = 0.0;
 		 	for(j = 0; j<colsEtapaII; j++){
-		 		modulo = modulo + Math.pow(MatrizEtapaII[i][j]-parseFloat(ArraySipSin[j].sin),2);	
+		 		modulo = modulo + Math.pow($scope.MatrizEtapaII[i][j]-parseFloat(ArraySipSin[j].sin),2);	
 		 	}
 		 	ArrayDistanciaEuclideaNeg.push(Math.pow(modulo,0.5));
 		 }

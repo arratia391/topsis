@@ -92,6 +92,21 @@ block contenido
 				h1(class= "animated fadeInLeft") Resultados
 				div(ng-repeat="data in Resultados")
 					h6( class= "animated fadeInLeft") {{data.indice}}: {{data.valor}}
+
+				br
+				h2 Matriz Normalizada Ponderada
+
+				table(class="table" class="animated fadeInLeft delay-05")
+					thead
+						tr
+							th Alternativa
+							th(ng-repeat="data in criterios") {{data.criterio}}
+					tbody
+						tr(ng-repeat="data1 in MatrizEtapaII track by $index")
+							td {{alternativas[$index][0]}}
+							td(ng-repeat="data2 in data1 track by $index") {{data1[$index]}}
+					
+
 				br
 				br
 				table(class="table" class="animated fadeInLeft delay-05")
