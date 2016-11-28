@@ -1,0 +1,53 @@
+[33mcommit 4f6fe8a955ba6dd1377cedd532a821b90f6796d1[m
+Author: Rodrigo Arratia Allende <rgo_2010@hotmail.com>
+Date:   Sun Nov 27 23:36:09 2016 -0300
+
+    Se ha incorporado la Matriz normalizada ponderada
+
+[33mcommit 32f2cddf185ed8bb20c63f717993f317d991946c[m
+Author: Rodrigo Arratia Allende <rgo_2010@hotmail.com>
+Date:   Mon Oct 10 01:37:20 2016 -0300
+
+    logo utem y titulo
+
+[33mcommit dd36c3283c8e65ae84b588a455b1ce0776632a4c[m
+Author: Rodrigo Arratia Allende <rgo_2010@hotmail.com>
+Date:   Sun Oct 2 17:19:33 2016 -0300
+
+    Ajustes en la barra de navegación bestChoise -> Experto
+
+[33mcommit 675b005151f2a1230e45a13c1a88f7247960ea52[m
+Author: Rodrigo Arratia Allende <rgo_2010@hotmail.com>
+Date:   Sun Oct 2 15:12:04 2016 -0300
+
+    se ha implementado el login, el experto podrá ingresar si el administrador lo ha ingresado a la base de datos
+
+[33mcommit 7b0e8d44d33370b75ce4ea060806da8aa1c49031[m
+Author: Rodrigo Arratia Allende <rgo_2010@hotmail.com>
+Date:   Sun Oct 2 00:00:01 2016 -0300
+
+    se ha implementado por completo la funcionalidad de EDITAR Y ELIMINAR
+
+[33mcommit eac8a0c6484aea1d87de7e7401c4cd04877187fe[m
+Author: Rodrigo Arratia Allende <rgo_2010@hotmail.com>
+Date:   Sat Oct 1 22:46:17 2016 -0300
+
+    se ha implementado por completo la funcionalidad de editar experto
+
+[33mcommit 1aa661d5920aa8defeb4e788f0cab13d287ce862[m
+Author: Rodrigo Arratia Allende <rgo_2010@hotmail.com>
+Date:   Sat Oct 1 21:23:39 2016 -0300
+
+    se ha agregado la vista editar, este muestra los datos del experto recogidos de mongo
+
+[33mcommit b009d7710df08d9e376f657f5ee943a2bf1e6066[m
+Author: Rodrigo Arratia Allende <rgo_2010@hotmail.com>
+Date:   Sat Oct 1 20:13:38 2016 -0300
+
+    se listan registros de expertos en vista editarEliminar.jade
+
+[33mcommit 896cb35915eec1fade525e25ffd3c5ab22a7670f[m
+Author: Rodrigo Arratia Allende <rgo_2010@hotmail.com>
+Date:   Wed Sep 28 22:07:16 2016 -0300
+
+    Corrresponde al avance 21-09 login no implementado

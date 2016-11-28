@@ -144,6 +144,23 @@ angular.module("llenarMatriz",['nvd3'])
 		}
 		console.log(ArraySum);
 
+
+
+		//*********************************************************************************
+		//MATRIZ NOMARLIZADA
+		$scope.MatrizNormalizada = [];
+		for(i=0; i<copiaMatriz.length; i++){
+			$scope.FilaNormalizada = [];
+			for(j=0; j<copiaMatriz[0].length; j++){
+				$scope.FilaNormalizada.push((copiaMatriz[i][j]/ArraySum[j]));
+
+			}
+			$scope.MatrizNormalizada.push($scope.FilaNormalizada);
+		}
+		//console.log(copiaMatriz);
+		console.log("NORMALIZADA :");
+		console.log($scope.MatrizNormalizada);
+
 		//**********************************************************************************
 		//MATRIZ NORMALIZADA PONDERADA
 		$scope.MatrizEtapaII = [];
